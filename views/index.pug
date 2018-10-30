@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  form.spar-form
+    .avartar
+    .form-row
+      .form-group.col-md-4.col-left
+        label(for='amount') Amount
+        select#selectCurrency(name="").custom-select.mr-sm-2
+          option(selected='') NGN
+      
+          
+      .form-group.col-md-8.col-right
+        label(for='inputAmount').amountLabel
+        input#inputAmount.form-control(type='number', placeholder='0.00')
+    
+    .form-group.row.justify-content-center
+      .col-md-12
+        label(for='number') Till Number
+        input#till-number.form-control(type='number', placeholder='Till Number')
+    .form-group.row.justify-content-center
+        button#btn-pay.btn.btn-outline-primary.btn-pay(type="button") Pay

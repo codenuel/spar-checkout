@@ -1,0 +1,83 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* opacity: 0.5;
+  filter: alpha(opacity=50); For IE8 and earlier */
+  background-color: #F4F6F8;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.avartar{
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #eee;
+  background: #eeeeee;
+  margin: 20px 0px 30px 0px;
+  background-image: url('../images/spar-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+  margin-left: 140px;
+
+}
+
+.btn-pay {
+  padding: 10px 45px;
+  color: #fff;
+  opacity: 0.89;
+  background-color: #576ae6 !important;
+}
+
+
+.btn-pay:hover, .btn-pay:focus {
+  opacity: 1;
+}
+
+.form-control {
+  border: 1px solid #c4cdd5 !important;
+}
+
+.spar-form {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 420px;
+  padding: 15px 30px;
+  margin: 70px auto;
+  background-color: #fff;
+}
+
+.amountLabel {
+  margin-top: 12.5px
+}
+
+.col-left{
+  margin-right: 0px !important;
+  padding-right: 0px !important;
+}
+
+.col-right{
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+}
+
+#selectCurrency {
+  border-radius: 5px 0px 0px 5px !important;
+
+}
+
+#inputAmount {
+  border-radius: 0px 5px 5px 0px !important;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */ 
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
