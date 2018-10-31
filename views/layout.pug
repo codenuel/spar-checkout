@@ -54,24 +54,33 @@ html
         $(document).ready(function(){
 
               var amount = $("#inputAmount").val();
-              var till_number = $("#till-number")
+              var till_number = $("#till-number");
+               var onSuccess = document.getElementById("tilltext");
+              var onFailure = document.getElementById("tilltext2");
               var tills = Array.from(JSON.parse(window.localStorage.getItem("till_numbers")))
           $("#till-number").keyup(function() {
+                onSuccess.innerHTML = ' ';
+                onFailure.innerHTML = ' ';
                 if(till_number.val().length === 5) {
                   setTimeout(handle, 1000)
                 }
 
                 function handle() {
+                  var onSuccess = document.getElementById("tilltext");
+                  var onFailure = document.getElementById("tilltext2");
+
                   if(tills.includes(parseInt(till_number.val()))) {
                     console.log("Call Ajax");
-                    document.getElementById("tilltext").innerHTML = " Correct!";
                     document.getElementById("till-number").style.borderColor = "green";
+                    onSuccess.innerHTML = " Correct!";
+                    
                     return
                   }
-                  console.log("Wrong Till number");
-                    document.getElementById("tilltext2").innerHTML = " Wrong Till Number";
+                    console.log("Wrong Till number");
                     document.getElementById("till-number").style.borderColor = "red";
-                  return "Wrong Till Number"
+                    onFailure.innerHTML = " Wrong Till Number";
+                  
+                    return
                 }
                 
                 //- var amount = $("#inputAmount").val();
