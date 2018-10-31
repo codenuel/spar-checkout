@@ -37,8 +37,20 @@ a {
   opacity: 1;
 }
 
-.form-control {
-  border: 1px solid #c4cdd5 !important;
+#tillnumber {
+  color: green
+}
+
+/* .form-control { */
+  /* border: 1px solid #c4cdd5 !important; */
+/* } */
+
+#tilltext {
+  color: #00ff22
+}
+
+#tilltext2{
+  color: #ff0022
 }
 
 .spar-form {
