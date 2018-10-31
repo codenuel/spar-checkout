@@ -55,10 +55,14 @@ html
 
               var amount = $("#inputAmount").val();
               var till_number = $("#till-number");
-               var onSuccess = document.getElementById("tilltext");
+
+              amount.length === 6;
+              till_number.length === 5;
+              
+              var onSuccess = document.getElementById("tilltext");
               var onFailure = document.getElementById("tilltext2");
               var tills = Array.from(JSON.parse(window.localStorage.getItem("till_numbers")))
-          $("#till-number").keyup(function() {
+              $("#till-number").keyup(function() {
                 onSuccess.innerHTML = ' ';
                 onFailure.innerHTML = ' ';
                 if(till_number.val().length === 5) {
@@ -70,7 +74,7 @@ html
                   var onFailure = document.getElementById("tilltext2");
 
                   if(tills.includes(parseInt(till_number.val()))) {
-                    console.log("Call Ajax");
+                    console.log("Correct");
                     document.getElementById("till-number").style.borderColor = "green";
                     onSuccess.innerHTML = " Correct!";
                     
@@ -82,37 +86,9 @@ html
                   
                     return
                 }
-                
-                //- var amount = $("#inputAmount").val();
-                //- var till_number = $("#till-number").val();
-
-                //- if(till_number.length  5){
-                //-   var tills = Array.from(JSON.parse(window.localStorage.getItem("till_numbers")))
-                  
-                //-     if(tills.indexOf(till_number) == -1 ) {
-                //-       console.log("Wrong till number")
-                //-       return "Wrong till number"
-                //-     } 
-                //-     $.ajax({
-                //-         url: '/validate',
-                //-         type: 'get',
-                //-         //- data: {
-                            
-                //-         //-     recipient_bank: recipient_bank,
-                //-         //-     recipient_account: recipient_account
-                //-         //- },
-                //-         dataType: 'json',
-                //-         success: function (resp) {
-                //-             console.log(resp);
-                //-         },
-                //-         error: function(err){
-                //-             console.log(err);
-                //-             //- alert(err.toString());
-                //-         }
-                //-     });
-                    
-                //- }
+               
             });
+    
 
           $("#btn-pay").click(function(){
               var amount = $("#inputAmount").val();
@@ -169,7 +145,20 @@ html
               }
           });
 
+          validate();
+          $('#inputAmount, #till-number').change(validate);
+
         });
+
+        function validate(){
+          if ($('#inputAmount').val().length   >   0   &&
+              $('#till-number').val().length    >   0) {
+              $("#btn-pay").prop("disabled", false);
+          }
+          else {
+              $("#btn-pay").prop("disabled", true);
+          }
+      }
         
 
            

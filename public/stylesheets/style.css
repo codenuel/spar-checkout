@@ -38,7 +38,7 @@ a {
 }
 
 #tillnumber {
-  color: green
+  color: #00ff22
 }
 
 /* .form-control { */
@@ -92,4 +92,9 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */ 
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.btn-outline-primary:disabled {
+  color: #ffffff !important;
+  /* background: #cccccc !important; */
 }

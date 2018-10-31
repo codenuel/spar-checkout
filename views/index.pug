@@ -12,13 +12,13 @@ block content
           
       .form-group.col-md-8.col-right
         label(for='inputAmount').amountLabel
-        input#inputAmount.form-control(type='number', placeholder='0.00')
+        input#inputAmount.form-control(type='number', placeholder='0.00',minlength='1', maxlength='5')
     
     .form-group.row.justify-content-center
       .col-md-12
         label(for='number') Till Number:
         span#tilltext
         span#tilltext2
-        input#till-number.form-control(type='number', placeholder='Till Number', value="")
+        input#till-number.form-control(type='number', placeholder='Till Number',minlength="2", maxlength="5", size="5")
     .form-group.row.justify-content-center
         button#btn-pay.btn.btn-outline-primary.btn-pay(type="button") Pay
